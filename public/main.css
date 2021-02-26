@@ -23,7 +23,7 @@ body {
 
 .inputs-container {
   width: 85%;
-  height: 350px;
+  height: 45vh;
   
   position: relative;
 
@@ -44,17 +44,26 @@ body {
 }
 
 input {
-  max-width: 100px;
-  width: 20%;
+  max-width: 150px;
+  width: 25%;
   height: 30px;
 
   position: absolute;
+
+  color: rgb(13, 13, 82);
+  font-size: 1.2em;
+  text-align: center;
 
   border: none;
   border-radius: 4px;
   outline: none;
 
   padding: 10px 7px;
+
+}
+
+input::placeholder {
+  font-size: 1.2rem;
 
 }
 
@@ -79,6 +88,22 @@ input.bottom {
 input.left {
   left: 0;
   bottom: 0;
+
+}
+
+@media (min-width: 550px) and (max-width: 800px) {
+  .inputs-container {
+    width: 70%;
+    height: 500px;
+
+  }
+
+  #changingBlock {
+    max-width: 600px;
+    width: 75%;
+    height: 400px;
+
+  }
 
 }
 
