@@ -8,6 +8,10 @@
 
   font-family: 'Roboto', sans-serif;
 
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; /* Chrome, Safari */
+  -moz-osx-font-smoothing: grayscale; /* Firefox */
+
 }
 
 body {
@@ -16,12 +20,36 @@ body {
   min-height: 90vh;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
 }
 
-.inputs-container {
+#allInputs {
+  max-width: 150px;
+  min-width: 82px;
+  width: 25%;
+  height: 30px;
+
+  color: rgb(13, 13, 82);
+  font-size: 1.1em;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.01em;
+
+  margin-bottom: 40px;
+  padding: 10px 7px;
+
+  border: none;
+  border-radius: 4px;
+  outline: none;
+
+
+}
+
+#inputs-container {
+  min-width: 250px;
   width: 85%;
   height: 45vh;
   
@@ -33,17 +61,20 @@ body {
 
 }
 
-#changingBlock {
+#squareBlock {
   background-color: black;
   
   width: 75%;
   height: 70%;
 
   border-radius: 0px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+
+  transition: all 0.4s;
 
 }
 
-input {
+#inputs-container input {
   max-width: 150px;
   width: 25%;
   height: 30px;
@@ -52,6 +83,7 @@ input {
 
   color: rgb(13, 13, 82);
   font-size: 1.2em;
+  font-weight: 500;
   text-align: center;
 
   border: none;
@@ -62,43 +94,56 @@ input {
 
 }
 
-input::placeholder {
+#inputs-container input::placeholder {
   font-size: 1.2rem;
+  letter-spacing: 0.05em;
 
 }
 
-input.top {
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input.TopLeft {
   top: 0;
   left: 0;
 
 }
 
-input.right {
-  right: 0;
+input.TopRight {
   top: 0;
-
-}
-
-input.bottom {
-  bottom: 0;
   right: 0;
 
 }
 
-input.left {
-  left: 0;
+input.BottomLeft {
   bottom: 0;
+  left: 0;
+
+}
+
+input.BottomRight {
+  bottom: 0;
+  right: 0;
 
 }
 
 @media (min-width: 550px) and (max-width: 800px) {
-  .inputs-container {
+  #inputs-container {
     width: 70%;
     height: 500px;
 
   }
 
-  #changingBlock {
+  #squareBlock {
     max-width: 600px;
     width: 75%;
     height: 400px;
@@ -107,19 +152,26 @@ input.left {
 
 }
 
-@media screen and (min-width: 800px) {
+@media (min-width: 800px) {
   body {
     min-height: 100vh;
 
   }
 
-  .inputs-container {
-    width: 70%;
+  #allInputs {
+    font-size: 1.2em;
+
+
+  }
+
+  #inputs-container {
+    min-width: 750px;
+    width: 50%;
     height: 600px;
 
   }
 
-  #changingBlock {
+  #squareBlock {
     max-width: 600px;
     width: 75%;
     height: 500px;
