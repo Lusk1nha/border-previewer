@@ -1,6 +1,6 @@
 # border-previewer
 
-A simple Border Radius that can be changed in real-time
+A simple and responsive Border Radius that can be changed in real-time
 
 ###### All this coded by me!
 
