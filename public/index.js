@@ -3,8 +3,6 @@ const allUnits = document.querySelectorAll('#unit-buttons .unit')
 
 const inputAllSides = document.querySelector('#allInputs')
 
-console.log(allUnits)
-
 let valueUnit = 'px'
 
 allUnits.forEach(button => {
@@ -39,7 +37,6 @@ function changeAllSides() {
     
     input.value = inputAllValue
     return squareBlock.style[borderSide] = `${inputAllValue}${valueUnit}`
-
   })
 }
 
